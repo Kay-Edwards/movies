@@ -27,11 +27,14 @@ window.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
   }
   function onDrop(event) {
+    event.preventDefault()
     const id = event
       .dataTransfer
       .getData('text');
-      const draggableElement = document.getElementById(id);
-      console.log(draggableElement.src)
+      
+      draggableElement = document.getElementById(id);
+    
+     
       const dropzone = event.target;
       dropzone.appendChild(draggableElement);
     event
